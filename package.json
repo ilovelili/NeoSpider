@@ -1,0 +1,11 @@
+{
+    "name": "neospider",
+    "description": "Scraping Neo to USD info",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "phantomjs": "^2.1.7",
+        "casperjs": "^1.1.4",
+        "mongodb": "^2.2.31"
+    }
+}
