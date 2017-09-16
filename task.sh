@@ -1,11 +1,16 @@
 #!/bin/sh
 
 # get resource
-echo "scraping starts"
+echo "neo scraping starts"
 PHANTOMJS_EXECUTABLE=/usr/local/bin/phantomjs /usr/local/bin/casperjs --web-security=no --ssl-protocol=any --ignore-ssl-errors=yes ./neospider.js
-echo "scraping ends"
+echo "neo scraping ends"
 
 # dump into mongo
-echo "mongo dumping starts"
+echo "neo mongo dumping starts"
 nodejs ./neodatadumper.js
-echo "mongo dumping ends"
+echo "neo mongo dumping ends"
+
+# dump into mongo
+echo "btc mongo dumping starts"
+nodejs ./btcspider.js
+echo "btc mongo dumping ends"
