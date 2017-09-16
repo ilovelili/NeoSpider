@@ -56,7 +56,6 @@ function save(data) {
                     console.error(err);
                 }
                 db.close();
-                unlinkFile();
             });
         }
     });
