@@ -7,7 +7,14 @@ var MongoClient = require('mongodb').MongoClient,
     path = require('path'),
     filename = path.join(process.cwd(), 'output', 'neo.json'),
     readFile = function () {
-        return JSON.parse(fs.readFileSync(filename, 'utf-8'));
+        var data = JSON.parse(fs.readFileSync(filename, 'utf-8'));        
+        return {
+            btc: data.btc,
+            btcrate: data.btcrate,
+            usd: data.usd,
+            usdrate: data.usdrate,
+            date: new Date(data.date),
+        }
     },
     unlinkFile = function () {
         fs.unlink(filename);
@@ -30,4 +37,3 @@ MongoClient.connect(url, function (err, db) {
         });
     }
 });
-
